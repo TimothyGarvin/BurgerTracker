@@ -38,5 +38,9 @@ public class BurgerService {
 	public List<Burger> burgersContaining(String search){
 		return burgerRepository.findByNameContaining(search);
 	}
+	public Burger deleteBurger(Long id) {
+		burgerRepository.deleteById(id);
+		return null;
+	}
 }
 

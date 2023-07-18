@@ -64,4 +64,9 @@ public class BurgerController {
 			return "redirect:/burgers";
 		}
 	}
+	@RequestMapping(value="/burgers/{id}", method=RequestMethod.DELETE)
+	public String destroy(@PathVariable("id") Long id) {
+		burgerService.deleteBurger(id);
+		return "redirect:/burgers";
+	}
 }
